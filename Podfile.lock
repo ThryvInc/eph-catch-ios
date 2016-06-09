@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (3.4.0)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
+  - Bolts/Tasks (1.7.0)
+  - Eson (0.3.2)
+  - Parse (1.13.0):
+    - Bolts/Tasks (~> 1.6)
+  - SBTextInputView (0.2.0)
+  - SSPullToRefresh (1.2.4)
+
+DEPENDENCIES:
+  - AlamofireImage (~> 2.0)
+  - Eson (from `https://github.com/schrockblock/eson`)
+  - Parse
+  - SBTextInputView (from `https://github.com/schrockblock/SBTextInputView`)
+  - SSPullToRefresh
+
+EXTERNAL SOURCES:
+  Eson:
+    :git: https://github.com/schrockblock/eson
+  SBTextInputView:
+    :git: https://github.com/schrockblock/SBTextInputView
+
+CHECKOUT OPTIONS:
+  Eson:
+    :commit: be1c6ec53d050cbcc99025f228e2c8aca0b46d86
+    :git: https://github.com/schrockblock/eson
+  SBTextInputView:
+    :commit: 82bffa968c0c915ef16f49c8383e581a190ba042
+    :git: https://github.com/schrockblock/SBTextInputView
+
+SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  Eson: fce37b531203d2e89c38b36cf17408c868313cbc
+  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  SBTextInputView: 7446058ca286fb7e195bcb1fab89fc0587cb38cd
+  SSPullToRefresh: 369e862c1d6528c7a354fc85cd4763d4e670e9af
+
+PODFILE CHECKSUM: 26756576cdd7470cbfac00625b9eaf21233fe41b
+
+COCOAPODS: 1.0.0.beta.2

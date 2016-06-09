@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5wC-TR-Sim">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Conversations-->
+        <scene sceneID="M6Z-Wt-5xo">
+            <objects>
+                <tableViewController id="5wC-TR-Sim" customClass="ConversationsTableViewController" customModule="Eph_Reunion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ifd-Bd-ahy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="convoCell" rowHeight="66" id="06k-du-8iH" customClass="ConversationTableViewCell" customModule="Eph_Reunion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="06k-du-8iH" id="9W8-nr-CIi">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTO-AO-MLt">
+                                            <rect key="frame" x="66" y="8" width="526" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4mM-qS-daB">
+                                            <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="Ka3-aO-6Xb"/>
+                                                <constraint firstAttribute="height" constant="50" id="sb2-fX-Ewg"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U66-jF-tSI">
+                                            <rect key="frame" x="66" y="29" width="526" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="U66-jF-tSI" secondAttribute="bottom" id="2rS-iK-1Zx"/>
+                                        <constraint firstItem="U66-jF-tSI" firstAttribute="leading" secondItem="4mM-qS-daB" secondAttribute="trailing" constant="8" id="3fc-ZR-stn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="U66-jF-tSI" secondAttribute="trailing" id="6s2-Rp-a1d"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="4mM-qS-daB" secondAttribute="leading" id="DJx-Vq-iTU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="4mM-qS-daB" secondAttribute="bottom" id="IpH-rF-kt3"/>
+                                        <constraint firstAttribute="topMargin" secondItem="4mM-qS-daB" secondAttribute="top" id="Wca-Mj-k3m"/>
+                                        <constraint firstItem="U66-jF-tSI" firstAttribute="top" secondItem="DTO-AO-MLt" secondAttribute="bottom" id="dIW-wb-p8B"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DTO-AO-MLt" secondAttribute="trailing" id="qH6-mB-hB3"/>
+                                        <constraint firstItem="DTO-AO-MLt" firstAttribute="top" secondItem="4mM-qS-daB" secondAttribute="top" id="xhI-4c-rtb"/>
+                                        <constraint firstItem="DTO-AO-MLt" firstAttribute="leading" secondItem="4mM-qS-daB" secondAttribute="trailing" constant="8" id="zP7-sK-TIO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="lastMessageLabel" destination="U66-jF-tSI" id="vIG-Bl-hxf"/>
+                                    <outlet property="userImageView" destination="4mM-qS-daB" id="Xcy-5k-geo"/>
+                                    <outlet property="userLabel" destination="DTO-AO-MLt" id="tcd-MD-pXr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5wC-TR-Sim" id="Rid-PX-lxl"/>
+                            <outlet property="delegate" destination="5wC-TR-Sim" id="Z1V-Ye-a7G"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Conversations" image="MessagesIconYellow" id="12C-QT-lc1"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="ERt-MH-k5p" kind="show" identifier="messages" id="PJa-Gi-30G"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vsb-xv-X10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="536" y="342"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="YsG-XW-bWw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Messages" id="ERt-MH-k5p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TER-zK-ufy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022.5" y="342"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MessagesIconYellow" width="32" height="29"/>
+    </resources>
+</document>

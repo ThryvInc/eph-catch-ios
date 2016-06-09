@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dkD-il-Ufe">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="Pjo-RX-67Q">
+            <objects>
+                <viewController id="dkD-il-Ufe" customClass="SplashViewController" customModule="EphCatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="COU-YD-ZAH"/>
+                        <viewControllerLayoutGuide type="bottom" id="l35-Hs-LgX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Aa2-sX-V2h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="Myv-sC-zCb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l35-Hs-LgX" firstAttribute="top" secondItem="Myv-sC-zCb" secondAttribute="bottom" id="HAy-3w-FhO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Myv-sC-zCb" secondAttribute="trailing" constant="-20" id="a4j-mu-l0e"/>
+                            <constraint firstItem="Myv-sC-zCb" firstAttribute="leading" secondItem="Aa2-sX-V2h" secondAttribute="leadingMargin" constant="-20" id="aAV-0S-7Iy"/>
+                            <constraint firstItem="Myv-sC-zCb" firstAttribute="top" secondItem="COU-YD-ZAH" secondAttribute="bottom" constant="-20" id="g1F-6g-cQ3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="oZ2-zz-WzK" kind="show" identifier="splashReg" id="xMR-SK-YP2"/>
+                        <segue destination="wqp-yB-Bfs" kind="show" identifier="splashTabs" id="RdM-U2-eFi"/>
+                        <segue destination="xR2-vX-Nkc" kind="show" identifier="splashEdit" id="cto-Dl-F1o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="47K-hf-F5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="563" y="83"/>
+        </scene>
+        <!--Registration-->
+        <scene sceneID="VUG-mU-RrK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Registration" id="oZ2-zz-WzK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QXr-x6-5bZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1059" y="-55"/>
+        </scene>
+        <!--Tabs-->
+        <scene sceneID="g6Z-cy-WSJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tabs" id="wqp-yB-Bfs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WWR-ez-fT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158.5" y="83"/>
+        </scene>
+        <!--EditProfile-->
+        <scene sceneID="Yot-vu-jmb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditProfile" id="xR2-vX-Nkc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xiu-jE-b1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064" y="235"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Splash" width="750" height="1334"/>
+    </resources>
+</document>
