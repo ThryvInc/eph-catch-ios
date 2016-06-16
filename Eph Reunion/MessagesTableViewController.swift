@@ -49,6 +49,7 @@ class MessagesTableViewController: BlankBackViewController, UITableViewDataSourc
     
     func refresh() {
         if let loadedConversation = conversation {
+            user = loadedConversation.user
             GetMessagesCall().getMessages(loadedConversation) { (messages, optError) in
                 if let _ = optError {
                     
@@ -72,6 +73,14 @@ class MessagesTableViewController: BlankBackViewController, UITableViewDataSourc
                 refresh()
             }
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        (segue.destinationViewController as! ProfileViewController).user = user
+    }
+    
+    func viewUser() {
+        performSegueWithIdentifier("profile", sender: self)
     }
     
     // MARK - SBTextInputViewDelegate
@@ -178,7 +187,9 @@ class MessagesTableViewController: BlankBackViewController, UITableViewDataSourc
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.textInput.resignFirstResponder()
+        viewUser()
     }
 
 }

@@ -9,7 +9,7 @@
         <!--Ephs-->
         <scene sceneID="2Nz-tk-rfu">
             <objects>
-                <collectionViewController id="TOj-fA-PCY" customClass="EphCollectionViewController" customModule="EphCatch" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="TOj-fA-PCY" customClass="EphCollectionViewController" customModule="Eph_Reunion" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="hRw-bE-Zze">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userCell" id="xrF-PK-q6A" customClass="UserCollectionViewCell" customModule="EphCatch" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userCell" id="xrF-PK-q6A" customClass="UserCollectionViewCell" customModule="Eph_Reunion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="206" height="238"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -84,7 +84,7 @@
                                     <outlet property="usernameLabel" destination="9Qx-ld-yXT" id="qwl-De-qMC"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="offsetCell" id="Svi-XM-tXj" customClass="OffsetCollectionViewCell" customModule="EphCatch" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="offsetCell" id="Svi-XM-tXj" customClass="OffsetCollectionViewCell" customModule="Eph_Reunion" customModuleProvider="target">
                                 <rect key="frame" x="216" y="89" width="206" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

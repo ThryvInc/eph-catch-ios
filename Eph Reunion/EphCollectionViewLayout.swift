@@ -9,6 +9,7 @@
 import UIKit
 
 class EphCollectionViewLayout: UICollectionViewFlowLayout {
+    var numberOfItems: Int?
     var numberOfColumns = 2
     var cellPadding: CGFloat = 2.0
     
@@ -27,8 +28,14 @@ class EphCollectionViewLayout: UICollectionViewFlowLayout {
     }
     
     override func prepareLayout() {
+        var shouldRecalculate = cache.isEmpty
+        if let itemCount = numberOfItems {
+            if itemCount != collectionView?.numberOfItemsInSection(0) {
+                shouldRecalculate = true
+            }
+        }
         // 1. Only calculate once
-        if cache.isEmpty {
+        if shouldRecalculate {
             
             // 2. Pre-Calculates the X Offset for every column and adds an array to increment the currently max Y Offset for each column
             let columnWidth = contentWidth / CGFloat(numberOfColumns)
@@ -38,6 +45,8 @@ class EphCollectionViewLayout: UICollectionViewFlowLayout {
             }
             var column = 0
             var yOffset = [CGFloat](count: numberOfColumns, repeatedValue: 0)
+            
+            numberOfItems = collectionView!.numberOfItemsInSection(0)
             
             // 3. Iterates through the list of items in the first section
             for item in 0 ..< collectionView!.numberOfItemsInSection(0) {
@@ -90,7 +99,7 @@ class EphCollectionViewLayout: UICollectionViewFlowLayout {
         var layoutAttributes = [UICollectionViewLayoutAttributes]()
         
         // Loop through the cache and look for items in the rect
-        for attributes  in cache {
+        for attributes in cache {
             if CGRectIntersectsRect(attributes.frame, rect ) {
                 layoutAttributes.append(attributes)
             }

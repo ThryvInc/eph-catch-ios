@@ -22,10 +22,12 @@ class ProfileViewController: BlankBackViewController {
         
         title = user.name
         nowLabel.text = user.currentActivity
-        majorLabel.text = user.major! as String
-        extrasLabel.text = user.extracurriculars! as String
+        majorLabel.text = user.major
+        extrasLabel.text = user.extracurriculars
         
-        if let imageUrl = user.imageUrl {
+        if let image = user.image {
+            userImageView.image = image
+        }else if let imageUrl = user.imageUrl {
             Alamofire.request(.GET, imageUrl as String)
                 .responseImage { response in
                     if let image = response.result.value {

@@ -28,9 +28,8 @@ class EphCollectionViewController: UICollectionViewController, UICollectionViewD
         tabBarController?.setBlankBackButton()
         
         let flowLayout: EphCollectionViewLayout = EphCollectionViewLayout()
-        
-        self.collectionView?.contentInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 0)
         self.collectionView?.collectionViewLayout = flowLayout
+        self.collectionView?.contentInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 0)
         self.collectionView?.backgroundColor = UIColor.whiteColor()
         
         self.tabBarController?.tabBar.translucent = false
@@ -74,7 +73,7 @@ class EphCollectionViewController: UICollectionViewController, UICollectionViewD
             if let _ = optError {
                 
             }else{
-                self.users = ephs?.reverse()
+                self.users = ephs
                 self.collectionView?.reloadData()
                 self.pullToRefreshView?.finishLoading()
             }
@@ -87,7 +86,7 @@ class EphCollectionViewController: UICollectionViewController, UICollectionViewD
             if let _ = optError {
                 
             }else{
-                self.users = ephs
+                self.users.appendContentsOf(ephs!)
                 self.collectionView?.reloadData()
             }
         }
@@ -136,7 +135,9 @@ class EphCollectionViewController: UICollectionViewController, UICollectionViewD
             let user = users[indexPath.item - 1]
             userCell.usernameLabel.text = user.name
             userCell.userSubtitleLabel.text = user.currentActivity
-            if let imageUrl = user.imageUrl {
+            if let image = user.image {
+                userCell.userImageView.image = image
+            }else if let imageUrl = user.imageUrl {
                 userCell.userImageView.image = nil
                 Alamofire.request(.GET, imageUrl)
                     .responseImage { response in
@@ -167,7 +168,7 @@ class EphCollectionViewController: UICollectionViewController, UICollectionViewD
     }
     
     override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.item == users.count - 3 && users.count % 10 == 0 {
+        if indexPath.item == users.count - 3 && users.count % 20 == 0 {
             nextPage()
         }
     }
